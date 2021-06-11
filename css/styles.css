@@ -1,0 +1,168 @@
+/* Variables */
+:root {
+  --bg-dark-blue: hsl(233, 47%, 7%);
+  --card-bg-ddblue: hsl(244, 38%, 16%);
+  --soft-violet: hsl(277, 64%, 61%);
+
+  --text-white: hsl(0, 0%, 100%);
+  --text-p: hsla(0, 0%, 100%, 0.75);
+  --text-stats-headigns: hsla(0, 0%, 100%, 0.6);
+}
+
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-dark-blue);
+  font-size: 15px;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Inter, sans-serif;
+}
+
+.card {
+  background: var(--card-bg-ddblue);
+  width: 315px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-img-container {
+  order: 0;
+  height: 231px;
+  background: var(--soft-violet);
+}
+
+.card-img {
+  width: 100%;
+  height: 231px;
+  mix-blend-mode: multiply;
+  background: url(../images/image-header-mobile.jpg) no-repeat;
+  background-size: contain;
+  opacity: 0.8;
+}
+
+.card-content {
+  padding: 3em 2.2em;
+  text-align: center;
+}
+
+.title, .stat-number {
+  color: var(--text-white);
+}
+
+.stat-number {
+  font-size: 26px;
+}
+
+.title span {
+  color: var(--soft-violet);
+}
+
+.main-p, .stat-heading {
+  font-family: "Lendex Deca", sans-serif;
+}
+
+.main-p {
+  color: var(--text-p);
+  margin-top: 1.5em;
+  line-height: 1.7;
+}
+
+.stats-container {
+  margin-top: 2.5em;
+}
+
+.stats:nth-child(2) {
+  margin: 2em 0;
+}
+
+.stats:nth-child(3), .stat-heading {
+  text-transform: uppercase;
+}
+
+.stat-heading {
+  color: var(--text-stats-headigns);
+  margin-top: 0.5em;
+  letter-spacing: 2px;
+  font-size: 12px;
+}
+
+.attribution {
+  font-size: 12px;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 10px 0;
+  background-color: #fff;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* Breakpoint 1024px */
+@media screen and (min-width: 1024px) {
+  .card {
+    width: 900px;
+    flex-direction: row;
+  }
+
+  .card-img-container {
+    order: 1;
+    width: 50%;
+    height: auto;
+  }
+
+  .card-img {
+    background: url(../images/image-header-desktop.jpg) no-repeat;
+    background-size: 100%;
+    height: 100%;
+  }
+
+  .card-content {
+    width: 50%;
+    padding: 3.8em 3em;
+    text-align: left;
+  }
+
+  .stats-container {
+    width: 100%;
+    display: flex;
+  }
+
+  .stats:nth-child(2) {
+    margin: 0 2em;
+  }
+}
+
+/* Breakpoint 1440px */
+@media screen and (min-width: 1440px) {
+  .card {
+    width: 1100px;
+  }
+
+  .card-content {
+    width: 50%;
+    padding: 5.5em 7.5em 5em 5em;
+    text-align: left;
+  }
+
+  .title {
+    font-size: 34px;
+  }
+
+  .stats-container {
+    margin-top: 4em;
+  }
+}
